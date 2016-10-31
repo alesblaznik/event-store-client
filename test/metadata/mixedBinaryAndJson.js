@@ -140,7 +140,7 @@ describe("Mixed Event Data and Metadata Types", function() {
 			var readSingleEvent = 1;
 
 			var connection = new EventStoreClient.Connection({ host: defaultHostName, onError: done });
-			connection.readStreamEventsBackward(streamId, testEventNumber, readSingleEvent, false, false, onEventAppeared, credentials, onCompleted);
+			connection.readStreamEventsBackward(streamId, testEventNumber, readSingleEvent, true, false, onEventAppeared, credentials, onCompleted);
 
 			function onEventAppeared(event) { testEvent = event; }
 
